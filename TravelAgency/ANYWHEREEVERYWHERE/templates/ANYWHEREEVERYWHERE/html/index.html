@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Travels</title>
+    <link rel="icon" href="https://i.imgur.com/LUXUOM6.png">
+    <link rel="stylesheet" type="text/css" href="{% static 'ANYWHEREEVERYWHERE/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   
+</head>
+<body>
+<!-- Background Video & Header -->
+
+    <div class="banner">
+        <video src="https://ik.imagekit.io/mohdrahil101/files/bgvid.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1668283958353" type="video/mp4" autoplay muted loop></video>
+        <!--<video src="https://rr4---sn-cvh7knsz.googlevideo.com/videoplayback?expire=1678646095&ei=7sYNZJadO6KJvdIPy4u0oAc&ip=222.113.156.219&id=o-AKkmqMpZxnJC-D_SsiKFmmrTjCxgZD8QsZv3BM7jj32G&itag=248&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278%2C394%2C395%2C396%2C397%2C398%2C399&source=youtube&requiressl=yes&spc=H3gIhp_DVzNIWPK11jKrcrcNyizPwXwhHQI-jVoZQKSzyThJKA&vprv=1&mime=video%2Fwebm&ns=TzPCJwrQApS3zE3ZNMxmJzwL&gir=yes&clen=35104589&dur=158.400&lmt=1654318038268660&keepalive=yes&fexp=24007246&c=WEB&txp=4535434&n=0SiA1iDj9asLRw&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAJHGCVIWKQAgW8Z2yz4kQkKt7dEdEy8Ddl6klFTFdGghAiEAx1UkwkYkgXK8TM6Ggweyq_NmWbQb7s3NFCCIgsXdTn4%3D&rm=sn-3u-fw0z7s,sn-3u-bh2ls7d,sn-ogue7e7l&req_id=1994ecc721e6a3ee&cmsv=e&redirect_counter=3&cms_redirect=yes&ipbypass=yes&mh=tb&mip=182.48.216.44&mm=30&mn=sn-cvh7knsz&ms=nxu&mt=1678639952&mv=m&mvi=4&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgOnzMSqf0rKgzOd8HtmdYxk7ssiOxA9a69TyhH6HwMpcCICQPGiwca7ScLKgmrpcPt7OdzIv7OpBaUku65jz6vlMO" type="video/mp4" autoplay muted loop></video>-->
+
+
+    <!-- Header -->
+
+    <div class="content" id="home"> 
+        <nav>
+            <img src="https://i.imgur.com/LUXUOM6.png" class="logo" alt="Logo" title="AnyWhereEveryWhere">
+            
+            <ul class="navbar">
+                <li>
+                    <a href="#home">Home</a>
+                    <a href="#locations">Locations</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                        {% if user.is_authenticated %}
+                            Signed in as <strong>{{ user.username }}</strong>.
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                            </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                        {% endif %}
+                </li>
+            </ul>
+        </nav>
+ 
+        <div class="title">
+            <h1>AnyWhereEveryWhere</h1>
+            <p>A Journey well shared is a Journey well enjoyed.<br> Plan your day with beautiful places to visit with your colleagues!</p>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Services -->
+
+
+
+<!-- Locations -->
+
+<section class="locations" id="locations">
+    <div class="package-title">
+        <h2>NAVI MUMBAI</h2>
+    </div>
+
+    <div class="location-content">
+        
+        <a href="./nerul#nerul" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/0uoKGBn.jpg" alt="">
+            <h5>Nerul</h5>
+            <p>NEXT NEW METROPOLIS</p>
+        </div></a>
+
+        <a href="./kharghar#kharghar" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/0PnFs3T.jpg" alt="">
+            <h5>Kharghar</h5>
+            <p>Wonderfull places</p>
+        </div></a>
+
+        <a href="./uran#uran" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/jeIqL9Y.jpg" alt="">
+            <h5>Uran</h5>
+            <p>Way to Some funtime</p>
+        </div></a>
+
+        <a href="./vashi#vashi" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/kZzV3yt.jpg" alt="">
+            <h5>Vashi</h5>
+            <p>Very Vonderfull and Vibrant</p>
+        </div></a>
+
+    </div>
+</section>
+
+<section class="locations" id="locations">
+    <div class="package-title">
+        <h2>MUMBAI</h2>
+    </div>
+
+    <div class="location-content">
+        
+
+        <a href="/kurla#kurla" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/YeQi0lO.jpg" alt="">
+            <h5>Kurla</h5>
+            <p>EnjoyyourDay</p>
+        </div></a>
+
+        <a href="/bandra#bandra" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/qK5GIIK.jpg" alt="">
+            <h5>Bandra</h5>
+            <p>Enjoy your day</p>
+        </div></a>
+
+        <a href="/southmumbai#southmumbai" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/eiVQzbj.jpg" alt="">
+            <h5>South Mumbai</h5>
+            <p>The coolest of all</p>
+        </div></a>
+
+        <a href="/westernmumbai#westernmumbai" target="_blank"><div class="col-content">
+            <img src="https://i.imgur.com/zOb65AN.jpg" alt="">
+            <h5>Western Mumbai</h5>
+            <p>Just Chill</p>
+        </div></a>
+
+    </div>
+</section>
+
+
+
+<!-- Packages -->
+
+
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="foot">
+        <div class="footer-content">
+            
+            <div class="footlinks">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./register">Register</a></li>
+                    <li><a href="./about">About Us</a></li>
+                    <li><a href="./contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+    <div class="end">
+        <p>Website AnyWhereEveryWhere developed by : <br> Rajkumar Tripat <br> Snehal Borse <br> Amrita Bera</p>
+    </div>
+</section>
+
+</body>
+</html>

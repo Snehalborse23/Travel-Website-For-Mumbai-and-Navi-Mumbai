@@ -1,0 +1,50 @@
+{% load static %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <link rel="icon" href="https://i.imgur.com/LUXUOM6.png">
+    <link rel="stylesheet" type="text/css" href="{% static 'ANYWHEREEVERYWHERE/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="{% static 'ANYWHEREEVERYWHERE/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="location-body">
+    <nav>
+        <img src="https://i.imgur.com/LUXUOM6.png" class="logo" alt="Logo" title="AnyWhereEveryWhere">
+        
+        <ul class="navbar">
+            <li>
+                <a href="/#home">Home</a>
+                <a href="/locations">Locations</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                    {% if user.is_authenticated %}
+                        Signed in as <strong>{{ user.username }}</strong>.
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    {% endif %}
+            </li>
+        </ul>
+    </nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
